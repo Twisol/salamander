@@ -17,4 +17,5 @@ Gem::Specification.new do |s|
   
   s.files = Dir['lib/**/*'] + Dir['bin/**/*']
   s.add_development_dependency 'bundler', '~> 1.0.7'
+  s.add_dependency 'ruby-sdl-ffi', '~> 0.3'
 end
