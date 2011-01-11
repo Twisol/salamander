@@ -1,0 +1,9 @@
+20.times do
+  5.times do
+    draw 100
+    turn 144
+  end
+  turn 18
+end
+
+

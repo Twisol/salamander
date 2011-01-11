@@ -1,0 +1,9 @@
+require 'salamander'
+
+Salamander.setup(256, 256)
+Salamander.draw do
+  instance_eval(File.open(ARGV[0]).read, ARGV[0])
+end
+
+while true
+end
