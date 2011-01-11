@@ -1,4 +1,7 @@
+#!/usr/bin/env ruby
+
 require 'salamander'
+require 'salamander/support'
 
 Salamander.setup(256, 256)
 Salamander.draw do

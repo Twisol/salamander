@@ -5,6 +5,9 @@ module Salamander
       :left => -90,
       :around => 180,
     }
+    DIRECTIONS.each_pair do |k, v|
+      DIRECTIONS[k] = v / 180.0 * Math::PI
+    end
     
     COMPASS = {
       :east => 0,
@@ -16,13 +19,17 @@ module Salamander
       :south => 90,
       :southeast => 45,
     }
+    COMPASS.each_pair do |k, v|
+      COMPASS[k] = v / 180.0 * Math::PI
+    end
+    
     
     def initialize (surface)
       @surface = surface
       
       move_to(surface.w/2, surface.h/2)
       face :north
-      color 0xFFFFFFFF
+      color "#FFFFFF"
     end
     
     def move_to (x, y)
@@ -46,27 +53,32 @@ module Salamander
       if angle.is_a? Symbol
         angle = DIRECTIONS[angle]
       end
-      @angle = (@angle + angle) % 360
+      face(theta + angle)
     end
     
     def face (angle)
       if angle.is_a? Symbol
         angle = COMPASS[angle]
       end
-      @angle = angle % 360
+      self.theta = angle
     end
     
     def color (color)
-      if color.is_a? String
-        r, g, b = color.scan(/[0-9A-Fa-f]{2}/).map {|c| c.to_i(16)}
-      end
-      @pen = color
+      @pen = (color[1..-1].to_i(16) * (2**8)) + 255
     end
     
   private
     def calculate_destination (distance)
-      [distance * Math.cos(@angle / 180.0 * Math::PI) + @x,
-       distance * Math.sin(@angle / 180.0 * Math::PI) + @y]
+      [distance * Math.cos(theta) + @x,
+       distance * Math.sin(theta) + @y]
+    end
+    
+    def theta= (angle)
+      @theta = angle % (2 * Math::PI)
+    end
+    
+    def theta
+      @theta
     end
   end
 end

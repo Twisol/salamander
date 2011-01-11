@@ -1,9 +1,7 @@
 20.times do
   5.times do
     draw 100
-    turn 144
+    turn 144.degrees
   end
-  turn 18
+  turn 18.degrees
 end
-
-

@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '~> 1.9.0'
   
   s.files = Dir['lib/**/*'] + Dir['bin/**/*']
+  s.executables = 'salamander'
+  
   s.add_development_dependency 'bundler', '~> 1.0.7'
   s.add_dependency 'ruby-sdl-ffi', '~> 0.3'
 end
