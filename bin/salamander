@@ -3,10 +3,12 @@
 require 'salamander'
 require 'salamander/support'
 
-Salamander.setup(256, 256)
-Salamander.draw do
-  instance_eval(File.open(ARGV[0]).read, ARGV[0])
+class Sketch < Salamander::Actor
+  include Salamander::Drawing
 end
+
+screen = Salamander.setup(512, 512)
+Sketch.draw(screen, ARGV[0])
 
 while true
 end
