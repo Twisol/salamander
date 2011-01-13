@@ -1,5 +1,8 @@
 module Salamander
   class Actor
+    # Executes code within the context of an Actor.
+    #
+    # If given a filename, reads the contents and evaluates it.
     def self.draw (screen, filename=nil, &blk)
       actor = new(screen)
       if filename
@@ -19,40 +22,49 @@ module Salamander
     end
     
     
+    # Get the current position as an array.
     def position
       [@x, @y]
     end
     
+    # Move a given distance in the current direction.
     def move (distance)
       x = distance * Math.cos(angle) + @x
       y = distance * Math.sin(angle) + @y
       move_to(x, y)
     end
     
+    # Move to a specific point
     def move_to (x, y)
       @x, @y = x, y
     end
     
     
+    # The current angle, in radians.
     def angle
       @angle
     end
     
+    # Turn towards a new direction.
+    #
+    # 'theta' may be :right, :left, :around, or a number of radians. Positive amounts of radians turn right, while negative amounts go to the left.
     def turn (theta)
       theta = DIRECTIONS[theta] if theta.is_a? Symbol
       face(theta + angle)
     end
     
+    # Face a specific direction
+    #
+    # 'theta' may be :north, :northeast, :east, etc. or a number of radians. 0 radians points east, and increasing amounts go clockwise.
     def face (theta)
       theta = COMPASS[theta] if theta.is_a? Symbol
       @angle = theta % (2 * Math::PI)
     end
     
-    
-    def rgba
-      @color
-    end
-    
+    # Gets or sets the current drawing color in numeric RGBA format.
+    #
+    # If 'color' is nil, gets the current color.
+    # Otherwise, 'color' must be in "#RRGGBB" notation.
     def color (color=nil)
       if not color then
         @color
@@ -68,6 +80,7 @@ module Salamander
     end
     
     
+    # The SDL surface being drawn to
     def surface
       @surface
     end

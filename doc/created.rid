@@ -1,0 +1,11 @@
+Thu, 13 Jan 2011 11:40:17 -0800
+lib/salamander.rb	Thu, 13 Jan 2011 11:25:40 -0800
+lib/salamander/support/radians.rb	Tue, 11 Jan 2011 15:28:48 -0800
+lib/salamander/constants.rb	Wed, 12 Jan 2011 18:03:51 -0800
+lib/salamander/actor.rb	Thu, 13 Jan 2011 11:34:10 -0800
+lib/salamander/drawing/line.rb	Thu, 13 Jan 2011 11:37:38 -0800
+lib/salamander/drawing/shapes.rb	Thu, 13 Jan 2011 11:39:26 -0800
+lib/salamander/support.rb	Tue, 11 Jan 2011 12:18:53 -0800
+lib/salamander/drawing.rb	Thu, 13 Jan 2011 01:28:21 -0800
+lib/salamander/version.rb	Thu, 13 Jan 2011 11:15:09 -0800
+lib/salamander/version.rbc	Mon, 10 Jan 2011 00:36:30 -0800

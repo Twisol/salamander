@@ -1,12 +1,14 @@
 module Salamander::Drawing
   module Line
-    def draw_to (x2, y2)
+    # Draws a line from the current position to (x2, y2) in the current drawing color.
+    def line_to (x2, y2)
       x1, y1 = position
       move_to(x2, y2)
       SDL::Gfx.aalineColor(surface, x1.round, y1.round, x2.round, y2.round, color)
     end
     
-    def draw (distance)
+    # Draws a line 'distance' pixels long from the current position in the current drawing color.
+    def line (distance)
       x1, y1 = position
       move distance
       x2, y2 = position

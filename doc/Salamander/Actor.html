@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: Salamander::Actor</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/salamander/actor_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/salamander/actor.rb">lib/salamander/actor.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">Object</p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-draw">::draw</a></li>
+					
+					<li><a href="#method-c-new">::new</a></li>
+					
+					<li><a href="#method-i-angle">#angle</a></li>
+					
+					<li><a href="#method-i-color">#color</a></li>
+					
+					<li><a href="#method-i-face">#face</a></li>
+					
+					<li><a href="#method-i-move">#move</a></li>
+					
+					<li><a href="#method-i-move_to">#move_to</a></li>
+					
+					<li><a href="#method-i-position">#position</a></li>
+					
+					<li><a href="#method-i-surface">#surface</a></li>
+					
+					<li><a href="#method-i-turn">#turn</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../Salamander.html">Salamander</a></li>
+				
+					<li><a href="../Salamander/Actor.html">Salamander::Actor</a></li>
+				
+					<li><a href="../Salamander/Drawing.html">Salamander::Drawing</a></li>
+				
+					<li><a href="../Salamander/Drawing/Line.html">Salamander::Drawing::Line</a></li>
+				
+					<li><a href="../Salamander/Drawing/Shapes.html">Salamander::Drawing::Shapes</a></li>
+				
+					<li><a href="../Numeric.html">Numeric</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">Salamander::Actor</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="draw-method" class="method-detail ">
+				<a name="method-c-draw"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">draw</span><span
+						class="method-args">(screen, filename=nil, &blk)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Executes code within the context of an <a href="Actor.html">Actor</a>.
+</p>
+<p>
+If given a filename, reads the contents and evaluates it.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="draw-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 6</span>
+ 6:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">draw</span> (<span class="ruby-identifier">screen</span>, <span class="ruby-identifier">filename</span>=<span class="ruby-keyword kw">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+ 7:       <span class="ruby-identifier">actor</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">screen</span>)
+ 8:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filename</span>
+ 9:         <span class="ruby-identifier">actor</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">read</span>, <span class="ruby-identifier">filename</span>)
+10:       <span class="ruby-keyword kw">else</span>
+11:         <span class="ruby-identifier">actor</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">blk</span>)
+12:       <span class="ruby-keyword kw">end</span>
+13:       <span class="ruby-constant">SDL</span>.<span class="ruby-constant">UpdateRect</span>(<span class="ruby-identifier">screen</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">screen</span>.<span class="ruby-identifier">w</span>, <span class="ruby-identifier">screen</span>.<span class="ruby-identifier">h</span>)
+14:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-method" class="method-detail ">
+				<a name="method-c-new"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new</span><span
+						class="method-args">(surface)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 16</span>
+16:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">surface</span>)
+17:       <span class="ruby-ivar">@surface</span> = <span class="ruby-identifier">surface</span>
+18:       
+19:       <span class="ruby-identifier">move_to</span>(<span class="ruby-identifier">surface</span>.<span class="ruby-identifier">w</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>, <span class="ruby-identifier">surface</span>.<span class="ruby-identifier">h</span><span class="ruby-operator">/</span><span class="ruby-value">2</span>)
+20:       <span class="ruby-identifier">face</span> <span class="ruby-value">:north</span>
+21:       <span class="ruby-identifier">color</span> <span class="ruby-node">&quot;#FFFFFF&quot;</span>
+22:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="angle-method" class="method-detail ">
+				<a name="method-i-angle"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">angle</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The current angle, in radians.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="angle-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 44</span>
+44:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">angle</span>
+45:       <span class="ruby-ivar">@angle</span>
+46:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="color-method" class="method-detail ">
+				<a name="method-i-color"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">color</span><span
+						class="method-args">(color=nil)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Gets or sets the current drawing color in numeric RGBA format.
+</p>
+<p>
+If &#8216;color&#8217; is nil, gets the current color. Otherwise,
+&#8216;color&#8217; must be in &#8220;#RRGGBB&#8221; notation.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="color-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 68</span>
+68:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">color</span> (<span class="ruby-identifier">color</span>=<span class="ruby-keyword kw">nil</span>)
+69:       <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">color</span> <span class="ruby-keyword kw">then</span>
+70:         <span class="ruby-ivar">@color</span>
+71:       <span class="ruby-keyword kw">else</span>
+72:         <span class="ruby-identifier">color</span> = <span class="ruby-identifier">color</span>.<span class="ruby-identifier">to_str</span>
+73:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">color</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">##</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">color</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">7</span>
+74:           <span class="ruby-identifier">color</span> = <span class="ruby-identifier">color</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>].<span class="ruby-identifier">to_i</span>(<span class="ruby-value">16</span>)
+75:           <span class="ruby-ivar">@color</span> = <span class="ruby-identifier">color</span> * (<span class="ruby-value">2</span><span class="ruby-operator">**</span><span class="ruby-value">8</span>) <span class="ruby-operator">+</span> <span class="ruby-value">255</span>
+76:         <span class="ruby-keyword kw">else</span>
+77:           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;color must be a valid string in the format #RRGGBB&quot;</span>
+78:         <span class="ruby-keyword kw">end</span>
+79:       <span class="ruby-keyword kw">end</span>
+80:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="face-method" class="method-detail ">
+				<a name="method-i-face"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">face</span><span
+						class="method-args">(theta)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Face a specific direction
+</p>
+<p>
+&#8216;theta&#8217; may be :north, :northeast, :east, etc. or a number of
+radians. 0 radians points east, and increasing amounts go clockwise.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="face-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 59</span>
+59:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">face</span> (<span class="ruby-identifier">theta</span>)
+60:       <span class="ruby-identifier">theta</span> = <span class="ruby-constant">COMPASS</span>[<span class="ruby-identifier">theta</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">theta</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Symbol</span>
+61:       <span class="ruby-ivar">@angle</span> = <span class="ruby-identifier">theta</span> <span class="ruby-operator">%</span> (<span class="ruby-value">2</span> * <span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">PI</span>)
+62:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="move-method" class="method-detail ">
+				<a name="method-i-move"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">move</span><span
+						class="method-args">(distance)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Move a given distance in the current direction.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="move-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 31</span>
+31:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move</span> (<span class="ruby-identifier">distance</span>)
+32:       <span class="ruby-identifier">x</span> = <span class="ruby-identifier">distance</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">cos</span>(<span class="ruby-identifier">angle</span>) <span class="ruby-operator">+</span> <span class="ruby-ivar">@x</span>
+33:       <span class="ruby-identifier">y</span> = <span class="ruby-identifier">distance</span> * <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sin</span>(<span class="ruby-identifier">angle</span>) <span class="ruby-operator">+</span> <span class="ruby-ivar">@y</span>
+34:       <span class="ruby-identifier">move_to</span>(<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+35:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="move-to-method" class="method-detail ">
+				<a name="method-i-move_to"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">move_to</span><span
+						class="method-args">(x, y)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Move to a specific point
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="move-to-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 38</span>
+38:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">move_to</span> (<span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>)
+39:       <span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span> = <span class="ruby-identifier">x</span>, <span class="ruby-identifier">y</span>
+40:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="position-method" class="method-detail ">
+				<a name="method-i-position"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">position</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Get the current position as an array.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="position-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 26</span>
+26:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">position</span>
+27:       [<span class="ruby-ivar">@x</span>, <span class="ruby-ivar">@y</span>]
+28:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="surface-method" class="method-detail ">
+				<a name="method-i-surface"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">surface</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+The SDL surface being drawn to
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="surface-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 84</span>
+84:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">surface</span>
+85:       <span class="ruby-ivar">@surface</span>
+86:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="turn-method" class="method-detail ">
+				<a name="method-i-turn"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">turn</span><span
+						class="method-args">(theta)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Turn towards a new direction.
+</p>
+<p>
+&#8216;theta&#8217; may be :right, :left, :around, or a number of radians.
+Positive amounts of radians turn right, while negative amounts go to the
+left.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="turn-source">
+<pre>
+    <span class="ruby-comment cmt"># File lib/salamander/actor.rb, line 51</span>
+51:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">turn</span> (<span class="ruby-identifier">theta</span>)
+52:       <span class="ruby-identifier">theta</span> = <span class="ruby-constant">DIRECTIONS</span>[<span class="ruby-identifier">theta</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">theta</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Symbol</span>
+53:       <span class="ruby-identifier">face</span>(<span class="ruby-identifier">theta</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">angle</span>)
+54:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
