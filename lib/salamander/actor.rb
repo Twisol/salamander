@@ -7,7 +7,6 @@ module Salamander
       else
         actor.instance_eval(&blk)
       end
-      
       SDL.UpdateRect(screen, 0, 0, screen.w, screen.h)
     end
     

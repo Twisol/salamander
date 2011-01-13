@@ -11,4 +11,6 @@ screen = Salamander.setup(512, 512)
 Sketch.draw(screen, ARGV[0])
 
 while true
+  event = SDL.WaitEvent
+  break if event.type == SDL::QUIT
 end
