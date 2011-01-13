@@ -1,7 +1,18 @@
-20.times do
+def pentagram (length)
   5.times do
-    draw 100
+    draw length
     turn 144.degrees
   end
+end
+
+def square (length)
+  4.times do
+    draw length
+    turn 90.degrees
+  end
+end
+
+20.times do
+  pentagram 126
   turn 18.degrees
 end

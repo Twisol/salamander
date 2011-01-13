@@ -1,29 +1,5 @@
 module Salamander
   class Actor
-    DIRECTIONS = {
-      :right => 90,
-      :left => -90,
-      :around => 180,
-    }
-    DIRECTIONS.each_pair do |k, v|
-      DIRECTIONS[k] = v / 180.0 * Math::PI
-    end
-    
-    COMPASS = {
-      :east => 0,
-      :northeast => 315,
-      :north => 270,
-      :northwest => 225,
-      :west => 180,
-      :southwest => 135,
-      :south => 90,
-      :southeast => 45,
-    }
-    COMPASS.each_pair do |k, v|
-      COMPASS[k] = v / 180.0 * Math::PI
-    end
-    
-    
     def initialize (surface)
       @surface = surface
       
@@ -64,7 +40,13 @@ module Salamander
     end
     
     def color (color)
-      @pen = (color[1..-1].to_i(16) * (2**8)) + 255
+      color = color.to_str
+      if color[0] == ?# and color.length == 7
+        color = color[1..-1].to_i(16)
+        @pen = color * (2**8) + 255
+      else
+        raise "color must be a valid string in the format #RRGGBB"
+      end
     end
     
   private

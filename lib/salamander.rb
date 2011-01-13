@@ -1,6 +1,7 @@
 require 'ruby-sdl-ffi/gfx'
 
 module Salamander
+  require 'salamander/constants'
   require 'salamander/actor'
   
   def self.setup (width, height)
