@@ -8,9 +8,9 @@ module Salamander::Drawing
     end
     
     # Draws a line 'distance' pixels long from the current position in the current drawing color.
-    def line (distance)
+    def line (distance, direction=nil)
       x1, y1 = position
-      move distance
+      move distance, direction
       x2, y2 = position
       SDL::Gfx.aalineColor(surface, x1.round, y1.round, x2.round, y2.round, color)
     end

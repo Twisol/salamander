@@ -1,4 +1,7 @@
-20.times do
-  star 15, 100
-  turn 18.degrees
+4.times do
+  [:red, :green, :cyan, :magenta, :blue].each do |c|
+    color c
+    star 15, 100
+    turn 18.degrees
+  end
 end

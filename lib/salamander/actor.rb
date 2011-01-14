@@ -27,10 +27,15 @@ module Salamander
       [@x, @y]
     end
     
-    # Move a given distance in the current direction.
-    def move (distance)
-      x = distance * Math.cos(angle) + @x
-      y = distance * Math.sin(angle) + @y
+    # Move a given distance
+    def move (distance, direction=nil)
+      if direction
+        theta = (direction.is_a?(Symbol) ? COMPASS[direction] : direction)
+      else
+        theta = angle
+      end
+      x = distance * Math.cos(theta) + @x
+      y = distance * Math.sin(theta) + @y
       move_to(x, y)
     end
     
@@ -69,6 +74,7 @@ module Salamander
       if not color then
         @color
       else
+        color = COLORS[color] if color.is_a? Symbol
         color = color.to_str
         if color[0] == ?# and color.length == 7
           color = color[1..-1].to_i(16)

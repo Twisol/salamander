@@ -21,4 +21,13 @@ module Salamander
   COMPASS.each_pair do |k, v|
     COMPASS[k] = v / 180.0 * Math::PI
   end
+  
+  COLORS = {
+    :red => "#FF0000",
+    :green => "#00FF00",
+    :blue => "#0000FF",
+    :yellow => "#FFF00",
+    :magenta => "#FF00FF",
+    :cyan => "#00FFFF",
+  }
 end
