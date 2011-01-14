@@ -1,0 +1,8 @@
+color :cyan
+circle 200
+color :green
+circle 150
+color :red
+circle 100
+color :magenta
+circle 50
