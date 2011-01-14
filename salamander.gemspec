@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   
   s.summary = 'An easy-to-use turtle graphics DSL'
   s.description = 'An easy-to-use turtle graphics DSL'
-  s.required_ruby_version = '~> 1.9.0'
+  s.required_ruby_version = '~> 1.8.0'
   
   s.files = Dir['lib/**/*'] + Dir['bin/**/*']
   s.executables = 'salamander'
