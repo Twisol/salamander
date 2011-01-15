@@ -1,32 +1,25 @@
 module Salamander::Drawing
   module Circle
     def arc(rotation, radius)
-      if rotation < 0
-        # Enter the center of the arc's circle
-        move radius, :left
-        turn :right
-        
-        # Draw the arc
-        x, y = position
-        theta = angle * 180.0 / Math::PI
-        SDL::Gfx.arcColor(surface, x.round, y.round, radius, theta+rotation, theta, color)
-        
-        # Move to the opposite side of the arc
-        turn rotation.degrees
-        move radius
-        turn :left
+      direction = (rotation > 0.degrees) ? :right : :left
+      
+      # Enter the center of the arc's circle
+      turn direction  # Turn towards the center point
+      move radius     # Move to the center point
+      turn :around    # Face the first endpoint of the arc
+     
+      # Draw the arc
+      x, y = position
+      if rotation > 0.degrees
+        SDL::Gfx.arcColor(surface, x.round, y.round, radius, angle, angle+rotation, color)
       else
-        move radius, :right
-        turn :left
-        
-        x, y = position
-        theta = angle * 180.0 / Math::PI
-        SDL::Gfx.arcColor(surface, x.round, y.round, radius, theta, theta+rotation, color)
-        
-        turn rotation.degrees
-        move radius
-        turn :right
+        SDL::Gfx.arcColor(surface, x.round, y.round, radius, angle+rotation, angle, color)
       end
+      
+      # Move to the opposite side of the arc
+      turn rotation.degrees
+      move radius
+      turn direction
     end
     
     def circle(radius)

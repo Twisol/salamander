@@ -1,11 +1,11 @@
 class Numeric
-  # Does nothing - input is assumed to be radians already
+  # Converts from radians to degrees.
   def radians
-    self
+    self * 180.0 / Math::PI
   end
   
-  # Converts from degrees to radians.
+  # Does nothing - input is assumed to be degrees already
   def degrees
-    self / 180.0 * Math::PI
+    self
   end
 end

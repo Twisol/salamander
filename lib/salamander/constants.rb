@@ -4,9 +4,6 @@ module Salamander
     :left => -90,
     :around => 180,
   }
-  DIRECTIONS.each_pair do |k, v|
-    DIRECTIONS[k] = v / 180.0 * Math::PI
-  end
   
   COMPASS = {
     :east => 0,
@@ -18,9 +15,6 @@ module Salamander
     :south => 90,
     :southeast => 45,
   }
-  COMPASS.each_pair do |k, v|
-    COMPASS[k] = v / 180.0 * Math::PI
-  end
   
   COLORS = {
     :red => "#FF0000",

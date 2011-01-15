@@ -1,0 +1,31 @@
+def grid(width, height, cells)
+  origin = position
+  
+  (cells-1).times do
+    turn :right
+    move height/cells.to_f
+    turn :left
+    line width
+    turn :around
+    move width
+    turn :around
+  end
+  move_to *origin
+  turn :right
+  
+  (cells-1).times do
+    turn :left
+    move width/cells.to_f
+    turn :right
+    line height
+    turn :around
+    move height
+    turn :around
+  end
+  move_to *origin
+  turn :left
+end
+
+move_to 0, 0
+face :east
+grid screen.w, screen.h, 3

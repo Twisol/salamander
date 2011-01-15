@@ -34,6 +34,7 @@ module Salamander
       else
         theta = angle
       end
+      theta = theta / 180.0 * Math::PI
       x = distance * Math.cos(theta) + @x
       y = distance * Math.sin(theta) + @y
       move_to(x, y)
@@ -45,25 +46,25 @@ module Salamander
     end
     
     
-    # The current angle, in radians.
+    # The current angle, in degrees.
     def angle
       @angle
     end
     
     # Turn towards a new direction.
     #
-    # 'theta' may be :right, :left, :around, or a number of radians. Positive amounts of radians turn right, while negative amounts go to the left.
+    # 'theta' may be :right, :left, :around, or a number of degrees. Positive amounts of degrees turn right, while negative amounts go to the left.
     def turn (theta)
       theta = DIRECTIONS[theta] if theta.is_a? Symbol
       face(theta + angle)
     end
     
-    # Face a specific direction
+    # Face a specific direction.
     #
-    # 'theta' may be :north, :northeast, :east, etc. or a number of radians. 0 radians points east, and increasing amounts go clockwise.
+    # 'theta' may be :north, :northeast, :east, etc. or a number of degrees. 0 degrees points east, and increasing amounts go clockwise.
     def face (theta)
       theta = COMPASS[theta] if theta.is_a? Symbol
-      @angle = theta % (2 * Math::PI)
+      @angle = theta % 360
     end
     
     # Gets or sets the current drawing color in numeric RGBA format.
