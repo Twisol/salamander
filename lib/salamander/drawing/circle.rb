@@ -11,9 +11,9 @@ module Salamander::Drawing
       # Draw the arc
       x, y = position
       if rotation > 0.degrees
-        SDL::Gfx.arcColor(surface, x.round, y.round, radius, angle, angle+rotation, color)
+        canvas.arc(x, y, radius, angle, angle+rotation, color)
       else
-        SDL::Gfx.arcColor(surface, x.round, y.round, radius, angle+rotation, angle, color)
+        canvas.arc(x, y, radius, angle+rotation, angle, color)
       end
       
       # Move to the opposite side of the arc
@@ -24,7 +24,7 @@ module Salamander::Drawing
     
     def circle(radius)
       x, y = position
-      SDL::Gfx.circleColor(surface, x, y, radius, color)
+      canvas.circle(x, y, radius, color)
     end
   end
 end

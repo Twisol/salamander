@@ -4,7 +4,7 @@ module Salamander::Drawing
     def line_to (x2, y2)
       x1, y1 = position
       move_to(x2, y2)
-      SDL::Gfx.lineColor(surface, x1.round, y1.round, x2.round, y2.round, color)
+      canvas.line(x1, y1, x2, y2, color)
     end
     
     # Draws a line 'distance' pixels long from the current position in the current drawing color.
@@ -12,7 +12,7 @@ module Salamander::Drawing
       x1, y1 = position
       move distance, direction
       x2, y2 = position
-      SDL::Gfx.lineColor(surface, x1.round, y1.round, x2.round, y2.round, color)
+      canvas.line(x1, y1, x2, y2, color)
     end
   end
 end

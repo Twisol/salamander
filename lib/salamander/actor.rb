@@ -3,20 +3,19 @@ module Salamander
     # Executes code within the context of an Actor.
     #
     # If given a filename, reads the contents and evaluates it.
-    def self.draw (screen, filename=nil, &blk)
-      actor = new(screen)
+    def self.draw (canvas, filename=nil, &blk)
+      actor = new(canvas)
       if filename
         actor.instance_eval(File.open(filename).read, filename)
       else
         actor.instance_eval(&blk)
       end
-      SDL.UpdateRect(screen, 0, 0, screen.w, screen.h)
     end
     
-    def initialize (surface)
-      @surface = surface
+    def initialize (canvas)
+      @canvas = canvas
       
-      move_to(surface.w/2, surface.h/2)
+      move_to(canvas.width/2, canvas.height/2)
       face :north
       color "#FFFFFF"
     end
@@ -87,9 +86,9 @@ module Salamander
     end
     
     
-    # The SDL surface being drawn to
-    def surface
-      @surface
+    # The drawing canvas being used
+    def canvas
+      @canvas
     end
   end
 end

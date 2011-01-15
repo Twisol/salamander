@@ -7,8 +7,9 @@ class Sketch < Salamander::Actor
   include Salamander::Drawing
 end
 
-screen = Salamander.setup(512, 512)
-Sketch.draw(screen, ARGV[0])
+canvas = Salamander.setup(512, 512)
+Sketch.draw(canvas, ARGV[0])
+canvas.redraw
 
 while true
   event = SDL.WaitEvent
